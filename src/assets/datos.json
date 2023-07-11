@@ -1,0 +1,22 @@
+{
+   
+    "datos": [
+      {
+        "nombre": "Juan",
+        "edad": 25,
+        "profesion": "Ingeniero",
+        "imagen:": "img1.png"
+      },
+      {
+        "nombre": "María",
+        "edad": 30,
+        "profesion": "Diseñadora"
+      },
+      {
+        "nombre": "Pedro",
+        "edad": 28,
+        "profesion": "Programador"
+      }
+    ]
+  }
+  
