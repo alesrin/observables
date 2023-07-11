@@ -8,7 +8,7 @@
         "imagen:": "img1.png"
       },
       {
-        "nombre": "María",
+        "nombre": "Maria",
         "edad": 30,
         "profesion": "Diseñadora"
       },
@@ -16,6 +16,11 @@
         "nombre": "Pedro",
         "edad": 28,
         "profesion": "Programador"
+      },
+       {
+        "nombre": "Paquita",
+        "edad": 51,
+        "profesion": "Esteticista"
       }
     ]
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-//1º Importamos el módulo HttpClient
+//PASO 2 Importamos el servicio HttpClient
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,13 +8,20 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit{
   title = 'observables';
+
+  //PASO 6 Inicializamos (y tipamos) la variable de los datos a los que nos vamos a subscribir
+
   datos!: any
+
+  //PASO 3 Inyectar el servicio HttpClient en el constructor
   constructor(private http: HttpClient){}
 
 ngOnInit(){
   this.cargarDatos(); // Llamamos a la función cargarDatos en el inicializador
 
 }
+
+//PASO 4 Crear la función del observable e inicialízala en el método ngOnInit(){}
 
 cargarDatos() {
   this.http.get<any>('../../assets/datos.json').subscribe(
@@ -29,8 +36,11 @@ cargarDatos() {
   })
 } */
 
+/* ESTRUCTURA OBSERVABLES CON SERVICIOS HTTP
 
-/* utilizamos this.http.get() para realizar una solicitud HTTP GET al archivo JSON. Luego, nos suscribimos al resultado de la solicitud y asignamos los datos al array this.datos de este componente. 
+Servicio + método + fuente de datos + subscripción
+
+utilizamos this.http.get() para realizar una solicitud HTTP GET al archivo JSON. Luego, nos suscribimos al resultado de la solicitud y asignamos los datos al array this.datos de este componente. 
 
 OPERADOR => 
   función de flecha (arrow function) en JavaScript y TypeScript, se utiliza para crear funciones de manera más concisa y clara
@@ -65,10 +75,17 @@ En este caso, el parámetro apellido se declara como opcional agregando el símb
 
 /* OBSERVABLES
 
-Es una fuente de datos. Para utilizar los observables en Angular usamos objetos que importamos de un paquete de terceros llamado RxJS. Con los servicios HTTP de Angular conectamos a la solicitud de HTTP, de forma que cuando hay respuesta, se emite como un paquete de datos. Se utiliza para manejar tareas asíncronas, que no sabemos cuándo se lanzan, o cuanto tiempo tardarán en ejecutarse
+Es una fuente de datos. Para utilizar los observables en Angular usamos objetos que importamos de un paquete de terceros llamado RxJS. 
+
+npm install --save rxjs@6
+npm install --save rxjs-compat
+
+Con los servicios HTTP de Angular conectamos a la solicitud de HTTP, de forma que cuando hay respuesta, se emite como un paquete de datos. Se utiliza para manejar tareas asíncronas, que no sabemos cuándo se lanzan, o cuanto tiempo tardarán en ejecutarse
+
+https://angular.io/guide/observables-in-angular
 
 HTTPCLIENT
 
-El servicio HttpClient es una clase proporcionada por Angular que se utiliza para realizar solicitudes HTTP, como solicitudes GET, POST, PUT, DELETE, etc., a servidores remotos. Permite interactuar con APIs RESTful y recuperar datos de manera asíncrona.
+El servicio HttpClient es una clase proporcionada por Angular que se utiliza para realizar solicitudes HTTP, como solicitudes GET, POST, PUT, DELETE, etc., a servidores remotos o archivos locales. Permite interactuar con APIs RESTful y recuperar datos de manera asíncrona.
 
 */
