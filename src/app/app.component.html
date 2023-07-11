@@ -4,5 +4,12 @@
   <h2>{{ item.nombre }}</h2>
   <p>Edad: {{ item.edad }}</p>
   <p>Profesión: {{ item.profesion }}</p>
+  <img [src]="'../../assets/img/' + item.imagen" width="50px" height="50px">
 </div>
 
+<h2>Otra forma de acceder a imagen</h2>
+<div *ngFor="let item of datos; let isLast = last">
+  <div *ngIf="isLast"> 
+    <img src="{{item.imagen}}" alt="" width="100px" height="100px">
+  </div>
+</div>
